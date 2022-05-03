@@ -36,3 +36,7 @@ whois domains .com .org .net
 ```bash
 ./whois_free.sh freedoman
 ```
+
+---
++ [edit](https://github.com/grabWHOIS/bash/edit/main/README.md)
+---
