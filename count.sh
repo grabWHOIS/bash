@@ -1,7 +1,12 @@
 #!/bin/bash
+# CONTRIBUTION
+## Author: Tom Sapletta
+## Created Date: 03.05.2022
+
 # EXAMPLE
 # ./count.sh pl
 # ./count.sh net
+
 # CONFIG
 TLD=$1
 [ -z "$TLD" ] && TLD="com"

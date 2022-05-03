@@ -1,4 +1,8 @@
 #!/bin/bash
+# CONTRIBUTION
+## Author: Tom Sapletta
+## Created Date: 03.05.2022
+
 # EXAMPLE
 # ./split.sh "No Data Found"
 
