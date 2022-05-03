@@ -1,2 +1,1 @@
-# bash
-bash.grabwhois.com
+# bash.grabwhois.com

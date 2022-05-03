@@ -4,10 +4,10 @@
 ## Created Date: 03.05.2022
 
 # EXAMPLE
-#./whois_registrar.sh Cron
-#./whois_registrar.sh Name
-#./whois_registrar.sh premium.pl
-#./whois_registrar.sh
+#./registrar.sh Cron
+#./registrar.sh Name
+#./registrar.sh premium.pl
+#./registrar.sh
 
 # CONFIG
 REGISTRAR=$1

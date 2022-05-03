@@ -1,0 +1,16 @@
+.com
+.co.uk
+.net
+.info
+.mobi
+.org
+.tel
+.biz
+.tv
+.cc
+.eu
+.ru
+.in
+.it
+.sk
+.com.au

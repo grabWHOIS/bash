@@ -1,0 +1,72 @@
+Domain Information
+Domain:
+test.com
+Registrar:
+Network Solutions, LLC
+Registered On:
+1997-06-18
+Expires On:
+2023-06-17
+Updated On:
+2021-04-18
+Status:
+clientTransferProhibited
+Name Servers:
+ns1.hosting.com
+ns2.hosting.com
+ns3.hosting.com
+
+Domain Name: TEST.COM
+Registry Domain ID: 5429075_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.networksolutions.com
+Registrar URL: http://networksolutions.com
+Updated Date: 2021-07-21T07:52:49Z
+Creation Date: 1997-06-18T04:00:00Z
+Registrar Registration Expiration Date: 2023-06-17T04:00:00Z
+Registrar: Network Solutions, LLC
+Registrar IANA ID: 2
+Reseller:
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: PERFECT PRIVACY, LLC
+Registrant Organization:
+Registrant Street: 5335 Gate Parkway care of Network Solutions PO Box 459
+Registrant City: Jacksonville
+Registrant State/Province: FL
+Registrant Postal Code: 32256
+Registrant Country: US
+Registrant Phone: +1.5707088780
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email: email@networksolutionsprivateregistration.com
+Registry Admin ID:
+Admin Name: PERFECT PRIVACY, LLC
+Admin Organization:
+Admin Street: 5335 Gate Parkway care of Network Solutions PO Box 459
+Admin City: Jacksonville
+Admin State/Province: FL
+Admin Postal Code: 32256
+Admin Country: US
+Admin Phone: +1.5707088780
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email: email@networksolutionsprivateregistration.com
+Registry Tech ID:
+Tech Name: PERFECT PRIVACY, LLC
+Tech Organization:
+Tech Street: 5335 Gate Parkway care of Network Solutions PO Box 459
+Tech City: Jacksonville
+Tech State/Province: FL
+Tech Postal Code: 32256
+Tech Country: US
+Tech Phone: +1.5707088780
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email: email@networksolutionsprivateregistration.com
+Name Server: NS1.HOSTING.COM
+Name Server: NS2.HOSTING.COM
+Name Server: NS3.HOSTING.COM
+DNSSEC: unsigned

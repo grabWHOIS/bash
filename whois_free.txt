@@ -1,0 +1,7 @@
+.com
+.net
+.info
+.org
+.eu
+.de
+.pl
