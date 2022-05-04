@@ -30,6 +30,7 @@ FIND="Domain not found"
 FINDFREE="Status: free"
 FINDFREEBY="Object does not exist"
 FINDFREEORG="No Data Found"
+FINDFREEOVH="NOT FOUND"
 
 #echo -e "$WHOIS_FILE\n"
 # grep -q "Status: free" <<< "Domain: 100eur.de Status: free";
@@ -71,7 +72,11 @@ while read -r line; do
     mv $WHOIS_FILE $WHOIS_TODAY_FREE_FOLDER
     break
   fi
-
+  if grep -q "$FINDFREEOVH" <<< "$line"; then
+    echo "FINDFREEOVH $WHOIS_FILE $WHOIS_FREE"
+    mv $WHOIS_FILE $WHOIS_TODAY_FREE_FOLDER
+    break
+  fi
   if grep -q "$FINDLIMIT" <<< "$line"; then
     echo "FINDLIMIT $WHOIS_FILE"
     rm -f $WHOIS_FILE

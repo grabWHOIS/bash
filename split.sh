@@ -10,10 +10,10 @@ CURRENTDATE=`date +"%Y-%m-%d"`
 WHOIS_FOLDER="output"
 mkdir -p "$WHOIS_FOLDER/cache"
 WHOIS_TODAY_FOLDER="$WHOIS_FOLDER/$CURRENTDATE"
-WHOIS_NAMESERVER="$WHOIS_FOLDER/nameserver/$domain.txt"
-WHOIS_REGISTRAR="$WHOIS_FOLDER/registrar/$domain.txt"
+#WHOIS_NAMESERVER="$WHOIS_FOLDER/nameserver/$domain.txt"
+#WHOIS_REGISTRAR="$WHOIS_FOLDER/registrar/$domain.txt"
 WHOIS_CACHE="$WHOIS_FOLDER/cache/$domain.txt"
-echo "" > $WHOIS_CACHE
+cat > $WHOIS_CACHE
 WHOIS_FILE="$WHOIS_TODAY_FOLDER/$domain.txt"
 
 # START

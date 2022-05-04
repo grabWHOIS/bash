@@ -12,33 +12,40 @@ CURRENTDATE=`date +"%Y-%m-%d"`
 WHOIS_FOLDER="output"
 WHOIS_TODAY_FOLDER="$WHOIS_FOLDER/$CURRENTDATE"
 ./data_create.sh
-WHOIS_ARCHIVE_FOLDER="$WHOIS_FOLDER/$YESTERDAY"
+#WHOIS_ARCHIVE_FOLDER="$WHOIS_FOLDER/$YESTERDAY"
 DOMAIN_LIST_FOLDER="input"
+DOMAIN_FILE_PATTERN="$DOMAIN_LIST_FOLDER/*.txt"
+#
+WHOIS_EXPIRE_FOLDER="$WHOIS_TODAY_FOLDER/expire"
+WHOIS_EXPIRE="$WHOIS_EXPIRE_FOLDER/$domain.txt"
+#
+WHOIS_FREE_FOLDER="$WHOIS_TODAY_FOLDER/free"
+WHOIS_FREE="$WHOIS_FREE_FOLDER/$domain.txt"
 
 # START
-DOMAIN_LIST=$(ls $DOMAIN_LIST_FOLDER)
-echo "$DOMAIN_LIST"
-for REGISTRAR_FILE in $DOMAIN_LIST
+DOMAIN_FILE_LIST=$(ls $DOMAIN_FILE_PATTERN)
+echo "$DOMAIN_FILE_LIST"
+for DOMAIN_FILE in $DOMAIN_FILE_LIST
 do
-  DOMAIN_LIST_FILE="$DOMAIN_LIST_FOLDER/$REGISTRAR_FILE"
-  DOMAIN_LIST=$(cat $DOMAIN_LIST_FILE)
+  DOMAIN_LIST=$(cat $DOMAIN_FILE)
   #echo $DOMAIN_LIST
   for domain in $DOMAIN_LIST
   do
-     WHOIS_NAMESERVER="$WHOIS_FOLDER/nameserver/$domain.txt"
-     WHOIS_REGISTRAR="$WHOIS_FOLDER/registrar/$domain.txt"
      WHOIS_FILE="$WHOIS_TODAY_FOLDER/$domain.txt"
      COUNT_LINES=0;
      [ -f $WHOIS_FILE ] && COUNT_LINES=$(cat $WHOIS_FILE | wc -l)
      # IF FILE NOT EXIST OR IS EMPTY
      if [ ! -f $WHOIS_FILE ] || [ ! -s $WHOIS_FILE ] || [ $COUNT_LINES -le 16 ];
      then
+       [ -f $WHOIS_EXPIRE ] && continue
+       [ -f $WHOIS_FREE ] && continue
         echo $domain
-        sh whois.sh $domain > $WHOIS_FILE
+        ./whois.sh $domain
+        # > $WHOIS_FILE
         sleep 2
-     else
-        ./split.sh $domain
-        ./move.sh $domain
+     #else
+        #./split.sh $domain
+        #./move.sh $domain
          #&> /dev/null
          #&> /dev/null
      fi

@@ -32,12 +32,13 @@ WHOIS_ARCHIVE_FREE_FOLDER="$WHOIS_ARCHIVE_FOLDER/free"
 #DOMAIN_FILE_LIST=$(find $WHOIS_ARCHIVE_FOLDER -name "$DOMAIN*" -type f)
 echo "YESTERDAY:"
 find $WHOIS_ARCHIVE_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
-echo "TODAY EXIST:"
+#echo "TODAY EXIST:"
+echo "TODAY:"
 find $WHOIS_TODAY_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
-echo "TODAY FREE:"
-find $WHOIS_TODAY_FREE_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
-echo "TODAY EXPIRE:"
-find $WHOIS_TODAY_EXPIRE_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
+#echo "TODAY FREE:"
+#find $WHOIS_TODAY_FREE_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
+#echo "TODAY EXPIRE:"
+#find $WHOIS_TODAY_EXPIRE_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
 
 #echo -e $WHOIS_ARCHIVE_FOLDER
 #echo -e $DOMAIN_FILE_LIST
