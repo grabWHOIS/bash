@@ -11,19 +11,15 @@ domain=$1
 CURRENTDATE=`date +"%Y-%m-%d"`
 WHOIS_FOLDER="output"
 #
-WHOIS_NAMESERVER="$WHOIS_FOLDER/nameserver/$domain.txt"
-WHOIS_REGISTRAR="$WHOIS_FOLDER/registrar/$domain.txt"
+./data_create.sh
 #
 WHOIS_TODAY_FOLDER="$WHOIS_FOLDER/$CURRENTDATE"
-mkdir -p $WHOIS_TODAY_FOLDER
 WHOIS_FILE="$WHOIS_TODAY_FOLDER/$domain.txt"
 #
 WHOIS_EXPIRE_FOLDER="$WHOIS_FOLDER/expire"
-mkdir -p $WHOIS_EXPIRE_FOLDER
 WHOIS_EXPIRE="$WHOIS_EXPIRE_FOLDER/$domain.txt"
 #
 WHOIS_FREE_FOLDER="$WHOIS_FOLDER/free"
-mkdir -p $WHOIS_FREE_FOLDER
 WHOIS_FREE="$WHOIS_FREE_FOLDER/$domain.txt"
 
 # START
@@ -41,7 +37,7 @@ if [ ! -f $WHOIS_FILE ] || [ ! -s $WHOIS_FILE ] || [ $COUNT_LINES -le 16 ]; then
   [ $COUNT_LINES -ge 16 ] && echo "$WHOISINFO" > $WHOIS_FILE
   sleep 2
   [ $COUNT_LINES -ge 30 ] && ./split.sh $domain &> /dev/null
-  ./clean.sh $domain &> /dev/null
+  ./move.sh $domain &> /dev/null
 fi
 sleep 2
 #cat $WHOIS_FILE

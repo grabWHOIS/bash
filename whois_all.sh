@@ -11,7 +11,7 @@ YESTERDAY=$(date -d "yesterday" '+%Y-%m-%d')
 CURRENTDATE=`date +"%Y-%m-%d"`
 WHOIS_FOLDER="output"
 WHOIS_TODAY_FOLDER="$WHOIS_FOLDER/$CURRENTDATE"
-mkdir -p $WHOIS_TODAY_FOLDER
+./data_create.sh
 WHOIS_ARCHIVE_FOLDER="$WHOIS_FOLDER/$YESTERDAY"
 DOMAIN_LIST_FOLDER="input"
 
@@ -38,7 +38,7 @@ do
         sleep 2
      else
         ./split.sh $domain
-        ./clean.sh $domain
+        ./move.sh $domain
          #&> /dev/null
          #&> /dev/null
      fi

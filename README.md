@@ -1,6 +1,8 @@
 # [bash.grabwhois.com](https://bash.grabwhois.com/)
 
 
+
+
 ## Install
 
 ```bash
@@ -36,6 +38,10 @@ whois domains .com .org .net
 ```bash
 ./whois_free.sh freedoman
 ```
+
+## docs
+
+
 
 ---
 + [edit](https://github.com/grabWHOIS/bash/edit/main/README.md)

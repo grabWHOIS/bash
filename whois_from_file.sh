@@ -20,7 +20,7 @@ DOMAIN_LIST_FOLDER="input"
 DOMAIN_LIST_FILE="$DOMAIN_LIST_FOLDER/$1.txt"
 # START
 echo "$DOMAIN_LIST"
-mkdir -p $WHOIS_TODAY_FOLDER
+./data_create.sh
 DOMAIN_LIST=$(cat $DOMAIN_LIST_FILE)
 
 for domain in $DOMAIN_LIST
