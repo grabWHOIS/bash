@@ -80,7 +80,7 @@ while read -r line; do
   if grep -q "$FINDLIMIT" <<< "$line"; then
     echo "FINDLIMIT $WHOIS_FILE"
     rm -f $WHOIS_FILE
-    sh restart.sh
+    ./restart.sh &> /dev/null
     sleep 30
     break
   fi

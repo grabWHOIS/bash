@@ -32,18 +32,27 @@ COUNT_LINES=0;
 [ -f $WHOIS_FILE ] && COUNT_LINES=$(cat $WHOIS_FILE | wc -l)
 # IF FILE NOT EXIST OR IS EMPTY
 if [ ! -f $WHOIS_FILE ] || [ ! -s $WHOIS_FILE ] || [ $COUNT_LINES -le 16 ]; then
-  echo $domain
+  #echo $domain
   WHOISINFO=$(whois $domain)
   echo $WHOISINFO
   COUNT_LINES=$(echo "$WHOISINFO" | wc -l)
-  #echo $COUNT_LINES
+  echo $COUNT_LINES
   ## SPLIT  ""
-  [ $COUNT_LINES -ge 16 ] && echo "$WHOISINFO" > $WHOIS_FILE
-  sleep 2
-  [ $COUNT_LINES -ge 30 ] && ./split.sh $domain &> /dev/null
-  ./move.sh $domain &> /dev/null
+  if [ $COUNT_LINES -ge 16 ]; then
+    echo "$WHOISINFO" > $WHOIS_FILE
+    if [ $COUNT_LINES -ge 30 ]; then
+      ./split.sh $domain
+    fi
+   #&> /dev/null
+    ./move.sh $domain
+   #&> /dev/null
+   else
+     # ANOTHER SMALLER WHOIS, SUCH FREE DOMAINS
+      echo "$WHOISINFO" > $WHOIS_FILE
+      ./move.sh $domain
+   fi
 fi
-sleep 2
+sleep 1
 #cat $WHOIS_FILE
 #cat $WHOIS_EXPIRE
 #ls $WHOIS_FREE_FOLDER

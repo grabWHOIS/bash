@@ -31,18 +31,18 @@ do
   #echo $DOMAIN_LIST
   for domain in $DOMAIN_LIST
   do
+     echo $domain
      WHOIS_FILE="$WHOIS_TODAY_FOLDER/$domain.txt"
      COUNT_LINES=0;
      [ -f $WHOIS_FILE ] && COUNT_LINES=$(cat $WHOIS_FILE | wc -l)
      # IF FILE NOT EXIST OR IS EMPTY
-     if [ ! -f $WHOIS_FILE ] || [ ! -s $WHOIS_FILE ] || [ $COUNT_LINES -le 16 ];
-     then
-       [ -f $WHOIS_EXPIRE ] && continue
-       [ -f $WHOIS_FREE ] && continue
-        echo $domain
+     if [ ! -f $WHOIS_FILE ] || [ ! -s $WHOIS_FILE ] || [ $COUNT_LINES -le 16 ]; then
+
+       if [ ! -f $WHOIS_EXPIRE ] && [ ! -f $WHOIS_FREE ]; then
         ./whois.sh $domain
         # > $WHOIS_FILE
-        sleep 2
+        sleep 1
+      fi
      #else
         #./split.sh $domain
         #./move.sh $domain
