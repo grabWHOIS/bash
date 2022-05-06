@@ -4,11 +4,10 @@
 ## Created Date: 03.05.2022
 
 # EXAMPLE
-#./whois_domain.sh web com
-#./whois_domain.sh web de
-#./whois_domain.sh Name
-#./whois_domain.sh premium.pl
-#./whois_domain.sh
+#./find_output.sh web com
+#./find_output.sh web de
+#./find_output.sh Name
+#./find_output.sh
 
 # CONFIG
 DOMAIN=$1
@@ -31,10 +30,18 @@ WHOIS_ARCHIVE_FREE_FOLDER="$WHOIS_ARCHIVE_FOLDER/free"
 #echo $DOMAIN_FILE_LIST
 #DOMAIN_FILE_LIST=$(find $WHOIS_ARCHIVE_FOLDER -name "$DOMAIN*" -type f)
 echo "YESTERDAY:"
-find $WHOIS_ARCHIVE_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
+FINDED=$(find $WHOIS_ARCHIVE_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD")
+for file in $FINDED
+do
+    cat "$file"
+done
 #echo "TODAY EXIST:"
 echo "TODAY:"
-find $WHOIS_TODAY_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
+FINDED=$(find $WHOIS_TODAY_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD")
+for file in $FINDED
+do
+    cat "$file"
+done
 #echo "TODAY FREE:"
 #find $WHOIS_TODAY_FREE_FOLDER -name "$DOMAIN*" -type f | grep ".$TLD"
 #echo "TODAY EXPIRE:"

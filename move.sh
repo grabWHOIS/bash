@@ -5,7 +5,7 @@
 
 # EXAMPLE
 # ./split.sh domain.com
-# TODO: replace with find.sh
+# TODO: replace with find_move.sh
 
 # CONFIG
 domain=$1
@@ -31,6 +31,7 @@ FINDFREE="Status: free"
 FINDFREEBY="Object does not exist"
 FINDFREEORG="No Data Found"
 FINDFREEOVH="NOT FOUND"
+FINDFREENET="No match for domain"
 
 #echo -e "$WHOIS_FILE\n"
 # grep -q "Status: free" <<< "Domain: 100eur.de Status: free";
@@ -74,6 +75,11 @@ while read -r line; do
   fi
   if grep -q "$FINDFREEOVH" <<< "$line"; then
     echo "FINDFREEOVH $WHOIS_FILE $WHOIS_FREE"
+    mv $WHOIS_FILE $WHOIS_TODAY_FREE_FOLDER
+    break
+  fi
+  if grep -q "$FINDFREENET" <<< "$line"; then
+    echo "FINDFREENET $WHOIS_FILE $WHOIS_FREE"
     mv $WHOIS_FILE $WHOIS_TODAY_FREE_FOLDER
     break
   fi
