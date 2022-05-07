@@ -1,5 +1,9 @@
 #!/bin/bash
 #
+mkdir -p "input"
+mkdir -p "output"
+mkdir -p "cache"
+#
 CURRENTDATE=`date +"%Y-%m-%d"`
 WHOIS_FOLDER="output"
 #

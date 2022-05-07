@@ -23,8 +23,12 @@ WHOIS_FREE_FOLDER="$WHOIS_TODAY_FOLDER/free"
 WHOIS_FREE="$WHOIS_FREE_FOLDER/$domain.txt"
 
 # START
+echo "GET LATEST deleted domains"
+./import_deleted_pl.sh
+echo "Show all domain list in QUEUE"
 DOMAIN_FILE_LIST=$(ls $DOMAIN_FILE_PATTERN)
 echo "$DOMAIN_FILE_LIST"
+# Check WHOIS and save to OUTPUT folder
 for DOMAIN_FILE in $DOMAIN_FILE_LIST
 do
   DOMAIN_LIST=$(cat $DOMAIN_FILE)
@@ -43,11 +47,6 @@ do
         # > $WHOIS_FILE
         sleep 1
       fi
-     #else
-        #./split.sh $domain
-        #./move.sh $domain
-         #&> /dev/null
-         #&> /dev/null
      fi
   done
 done

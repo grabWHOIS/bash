@@ -1,3 +1,7 @@
+find_output_dns.txt
+cache/*
+data.dat
+domeny.txt
 input
 output
 .idea
