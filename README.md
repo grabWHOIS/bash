@@ -32,18 +32,23 @@ Skrypt **import_deleted_pl.sh** pobiera plik listy domen w trakcie wygasania ze 
 ```bash
 ./import_deleted_pl.sh
 ```
-Pobrane dane WHOIS domeny są zapisywane do pliku tekstowego
-Dodatkowo domeny wygasające, wolne do rejestracji i zablokowane znajdują sie w osobnych folderach dla danej daty 
+
+Uruchomienie pobierania danych z plików znajdujących się w folderze **input/**
+```bash
+./whois_all.sh 
+```
+
+Pobrane dane WHOIS domen są zapisywane do plików tekstowych, każda domena oddzielnie.
+Domeny ze statusami: **wolne do rejestracji**, **wygasające po rejestracji** i **zablokowane** znajdują się w osobnych pod-folderach dla danej daty pobierania w folderze **output** 
 
     "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
-
 
 Zapraszam do testowania!
 
 ## Użycie programu
 
 Rozwiązanie najlepiej uruchomić na zewnętrznym urządzeniu jak RPI, które może pracować całą noc pobierając mniej prądu
-a także resetować router jeśli taka opjca jest możliwa obecnie jest wspierane resetowanie routera marki fritz.
+a także resetować router jeśli taka opcja jest możliwa obecnie jest wspierane resetowanie routera marki fritz.
 
 Struktura plików
     
@@ -97,6 +102,15 @@ sudo apt install whois
 
 więcej informacji na bashfunc/www/whois: [How to Use the whois Command on Linux](https://www.howtogeek.com/680086/how-to-use-the-whois-command-on-linux/)
 
+### Pobranie projektu
+
+```bash
+git clone https://github.com/grabWHOIS/bash.git grabWHOIS
+```
+
+```bash
+cd grabWHOIS
+```
 
 ## check WHOIS
 
