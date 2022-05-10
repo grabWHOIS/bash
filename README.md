@@ -37,7 +37,7 @@ Poniżej kilka informacji:
 ## DNS TOOLS
 
 Jak sprawdzić status domeny i dane abonenta?
-+ [DNS | Krajowy Rejestr Domen](https://www.dns.pl/whois)
++ [DNS - Krajowy Rejestr Domen](https://www.dns.pl/whois)
 
 Globalna Lista usuniętych domen 
 + [Deleted Domains (last 7 days) » ExpiredDomains.net](https://member.expireddomains.net/domains/combinedexpired/?o=statustld_registered&r=d&ftlds[]=196&flimit=200&fwordpl=1#listing)
