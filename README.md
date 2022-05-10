@@ -17,8 +17,8 @@ Jak podaje NASK (opłacany przez Polaków) status **clientHold/serverHold** ozna
 Rodzą się naturalne wątpliwości i pytania:
 
 1. Dlaczego tak istotnie różne sytuacje są **ukryte** pod jednym statusem?
-2. Dlaczego wiele domen w trakcie wygasania, te które nie są przedłużane świadomie przez abonenta nie ma tego statusu?
-   Warto wiedzieć, że w Polsce nie ma obowiązku przedłużania domen a nierozliczona domena może zostać usunięta z rejestru.
+2. Dlaczego wiele domen w trakcie wygasania, te które nie są przedłużane (świadomie przez abonenta) nie mają tego statusu?
+   Warto wiedzieć, że w Polsce nie ma obowiązku przedłużania ważności domen a nierozliczona domena może zostać usunięta z rejestru.
 
 
 + [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
