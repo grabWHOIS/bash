@@ -74,6 +74,7 @@ Zakończył się opłacony okres rozliczeniowy; w tym stanie domena przebywa do 
     "No information available about domain name"
 Domena nie istnieje w bazie Registry NASK.
 
++ ['clientHold/serverHold'. - Forum Di.pl Domeny Internetowe](https://di.pl/search/?q=clientHold/serverHold)
 + [STATUSY domen globalnych](STATUSY.md)
 
 ## Użycie programu
