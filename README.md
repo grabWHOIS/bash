@@ -63,7 +63,7 @@ Domeny ze statusami: **wolne do rejestracji**, **wygasające po rejestracji** i 
 Status domeny jest wykrywany poprzez wyszukiwanie charakterystycznej frazy w pliku wyniku WHOIS:  
 
 ### Blocked - domena zablokowana przez rejestr NASK bez wyroku sądu
-"Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
+    "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
 
 ### Expire - wygasająca
     "billing period had finished"
