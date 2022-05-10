@@ -13,19 +13,18 @@ to już są procenty...
 + [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
 
 
-## Zapraszam do testowania!
-
-To część większej układanki do sprawdzenia skali zjawiska.
-
 Poniżej kilka informacji:
 
 + Jak to działa
 + Do czego służy
 + Jak zainstalować
 
+## Zapraszam do testowania!
+
 Program odpytuje WHOIS ze zmiennym IP poprzez router DSL 
 skrypt **restart.sh** resetuje go w momencie uzyskania limitu zapytań dla aktualnego adresu IP
-
+W celu informowania o momencie resetowania wydaje dźwięk 1 raz
+Skrypt odczekuje 1 minutę i ponawia dwukrotnie dźwięk by zasygnalizowąc powrót połączenia do sieci internet 
 ```bash
 ./restart.sh
 ```
