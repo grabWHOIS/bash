@@ -12,6 +12,9 @@ to już są procenty...
 
 + [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
 
+
+## Zapraszam do testowania!
+
 To część większej układanki do sprawdzenia skali zjawiska.
 
 Poniżej kilka informacji:
@@ -40,11 +43,25 @@ Uruchomienie pobierania danych z plików znajdujących się w folderze **input/*
 ```
 
 Pobrane dane WHOIS domen są zapisywane do plików tekstowych, każda domena oddzielnie.
+Skrypt **move.sh** przenosi pliki do folderów: **free**, **expire**, **blocked** na podstawie statusu WHOIS
+```bash
+./move.sh 
+```
 Domeny ze statusami: **wolne do rejestracji**, **wygasające po rejestracji** i **zablokowane** znajdują się w osobnych pod-folderach dla danej daty pobierania w folderze **output** 
 
-    "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
+## Statusy 
+Status domeny jest wykrywany poprzez wyszukiwanie charakterystycznej frazy w pliku wyniku WHOIS:  
 
-Zapraszam do testowania!
+### Blocked - domena zablokowana przez rejestr NASK bez wyroku sądu
+"Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
+
+### Free - wolna do rejestracji
+"No information available about domain name"
+
+### Expire - wygasająca
+"billing period had finished"
+
+
 
 ## Użycie programu
 
