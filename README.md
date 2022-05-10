@@ -4,7 +4,7 @@
 
 Przygotwałem ten projekt odpytujący whois ze zmiennym IP
 w celu sprawdzania poziomu cenzury w Polsce
-+ [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą | Zaufana Trzecia Strona](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
++ [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
  
 Domeny ze statusem: 
 
