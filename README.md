@@ -70,77 +70,56 @@ Rozwiazanie najlepiej uruchomić na zewnętrznym urządzeniu jak RPI, które mo�
 a także resetować router jeśli taka opjca jest możliwa obecnie jest wspierane resetowanie routera marki fritz.
 
 
-## INSTALL WHOIS
-
-Jak zainstalować
-
-    sudo apt-get install whois
-
-więcej informacji na bashfunc/www/whois
-https://www.howtogeek.com/680086/how-to-use-the-whois-command-on-linux/
-
-
-# TODO
-
-
-## Plany
-
-Następny krok to aplikacja webowa i statyczne API z autoryzacją i limitami per client do 1000 zapytań dziennie.
-
-2 metody dostępu do publicznego serwisu
-+ token do zapytań generowany dla usera na rok
-+ zapytania IP opóznianie do 1s/zapytanie
-+ opcja hurtowego sprawdzania dla zarejestrowanych per email lub per token dla 1000 zapytań udostępniany dla wybranych, którzy nie chcą się rejestrować w systemie.
-+ każdy kto zrobi donate, nawet bez rejestracji dostanie hash na 10k zapytań
-
-Dzięki temu będzie szansa by więcej osób skorzystało i to nadal działało.
-To część większego systemu, dlatego nie chcę zarabiać na dostępie do danych ogólnie dostępnych
-a jedynie go ułatwić i też nawiązać współpracę z domainerami
-Niestety to wszystko kosztuje czas i trwa miesiącami, kolejne usługi to będzie codzienna archiwizacja stron www w formacie HTML i zrzut ekranu
-
-
-### subdomeny dla whoisarch.com zalezne od kraju/TLD
-
-    *.whoisarch.com
     
-    com.whoisarch.com
-    net.whoisarch.com
-    org.whoisarch.com
-    pl.whoisarch.com
-    de.whoisarch.com
-    ch.whoisarch.com
+```bash    
+|__LICENSE
+|__.input
+| |__2022-05-10_deleted_domains.txt
+|__.output
+| |__2022-05-10
+| | |__free
+| | |__expire
+| | |__blocked
+|__count.sh
+|__data_clean.sh
+|__data_create.sh
+|__find.sh
+|__find_input.sh
+|__find_move.sh
+|__find_output.sh
+|__find_output_dns.sh
+|__import_deleted_pl.sh
+|__move.sh
+|__nameserver.sh
+|__README.md
+|__registrar.sh
+|__restart.bat
+|__restart.sh
+|__split.sh
+|__whois.sh
+|__whois_all.sh
+|__whois_data.txt
+|__whois_file_count.sh
+|__whois_free.sh
+|__whois_free.txt
+|__whois_free_all.txt
+|__whois_from_file.sh
+```
 
-+ LOGS each day
-+ REPORTS each 2 days, diff
-+ watch logs
-
-
-### Lista wszystkich metod pozyskania whois
-
-jako oddzielny projekt
-do monitorowania zmian w rejestrach
-
-
-
-### Przykłady użycia
-
-https://github.com/grabWHOIS/examples
-
-na letWHOIS z opcją używania innnych agentów i przetwarzaniem formatu
-
-z instalacją i przykładową listą input i output
-
-
-
+## INSTALL WHOIS
 
 
 ## Install
+
+Jak zainstalować na systemie linux: Debian, Ubuntu, ...
 
 ```bash
 sudo apt update
 sudo apt upgrade
 sudo apt install whois
 ```
+
+więcej informacji na bashfunc/www/whois: [How to Use the whois Command on Linux](https://www.howtogeek.com/680086/how-to-use-the-whois-command-on-linux/)
 
 
 ## check WHOIS
@@ -171,6 +150,61 @@ whois domains .com .org .net
 ```bash
 ./whois_free.sh freedoman
 ```
+
+
+
+# TODO
+
+
+## Plany
+
+Następny krok to aplikacja webowa i statyczne API z autoryzacją i limitami per client do 1000 zapytań dziennie.
+
+2 metody dostępu do publicznego serwisu
++ token do zapytań generowany dla usera na rok
++ zapytania IP opóznianie do 1s/zapytanie
++ opcja hurtowego sprawdzania dla zarejestrowanych per email lub per token dla 1000 zapytań udostępniany dla wybranych, którzy nie chcą się rejestrować w systemie.
++ każdy kto zrobi donate, nawet bez rejestracji dostanie hash na 10k zapytań
+
+Dzięki temu będzie szansa by więcej osób skorzystało i to nadal działało.
+To część większego systemu, dlatego nie chcę zarabiać na dostępie do danych ogólnie dostępnych
+a jedynie go ułatwić i też nawiązać współpracę z domainerami
+Niestety to wszystko kosztuje czas i trwa miesiącami, kolejne usługi to będzie codzienna archiwizacja stron www w formacie HTML i zrzut ekranu
+
+
+
+### Przykłady użycia
+
+https://github.com/grabWHOIS/examples
+
+na letWHOIS z opcją używania innnych agentów i przetwarzaniem formatu
+
+z instalacją i przykładową listą input i output
+
+
+### subdomeny dla whoisarch.com zalezne od kraju/TLD
+
+    *.whoisarch.com
+    
+    com.whoisarch.com
+    net.whoisarch.com
+    org.whoisarch.com
+    pl.whoisarch.com
+    de.whoisarch.com
+    ch.whoisarch.com
+
++ LOGS each day
++ REPORTS each 2 days, diff
++ watch logs
+
+
+### Lista wszystkich metod pozyskania whois
+
+jako oddzielny projekt
+do monitorowania zmian w rejestrach
+
+
+
 
 ## docs
 
