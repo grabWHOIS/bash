@@ -1,14 +1,25 @@
 # [bash.grabwhois.com](https://bash.grabwhois.com/)
 
-Projekt napisany w skryptach bash, odpytujący whois ze zmiennym IP z resetowaniem routera DSL przez API
+Projekt odpytujący whois ze zmiennym IP z resetowaniem routera DSL przez API
 
 + [Repozytorium plików git grabWHOIS/bash: bash.grabwhois.com](https://github.com/grabWHOIS/bash)
 + [Projekt grabWHOIS](https://github.com/grabWHOIS)
 
 
-Zapraszam do skorzystania z narzędzia grabWHOIS do pobierania danych domeny WHOIS i weryfikacji samemu ile tak na prawdę domen jest cenzurowanych:
-"Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
-to już są procenty...
+Zapraszam do skorzystania z narzędzia grabWHOIS do pobierania danych domeny WHOIS i weryfikacji samemu ile tak na prawdę domen jest cenzurowanych w Polsce przez "instytucję" NASK:
+Szczególnie interesujące są domeny zablokowane ze statusem:
+
+    "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
+
+Jak podaje NASK (opłacany przez Polaków) status **clientHold/serverHold** oznacza, że 
+"Utrzymywanie domeny zostało wstrzymane do czasu wyjaśnienia wątpliwości dotyczących współpracy z jej abonentem, np. w przypadku zaległości płatniczych u rejestratora, braku aktualizacji danych abonenta (pomimo wezwania), wykorzystywania domeny do celów zagrażających bezpieczeństwu sieci."
+
+Rodzą się naturalne wątpliwości i pytania:
+
+1. Dlaczego tak istotnie różne sytuacje są **ukryte** pod jednym statusem?
+2. Dlaczego wiele domen w trakcie wygasania, te które nie są przedłużane świadomie przez abonenta nie ma tego statusu?
+   Warto wiedzieć, że w Polsce nie ma obowiązku przedłużania domen a nierozliczona domena może zostać usunięta z rejestru.
+
 
 + [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
 
@@ -54,14 +65,6 @@ Status domeny jest wykrywany poprzez wyszukiwanie charakterystycznej frazy w pli
 ### Blocked - domena zablokowana przez rejestr NASK bez wyroku sądu
 "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
 
-Jak podaje NASK ten status oznacza, że "Utrzymywanie domeny zostało wstrzymane do czasu wyjaśnienia wątpliwości dotyczących współpracy z jej abonentem, np. w przypadku zaległości płatniczych u rejestratora, braku aktualizacji danych abonenta (pomimo wezwania), wykorzystywania domeny do celów zagrażających bezpieczeństwu sieci."
-
-Rodzą się naturalne wątpliwości i pytania:
-1. Dlaczego tak istotnie różne sytuacje są **ukryte** pod jednym statusem?
-2. Dlaczego wiele domen w trakcie wygasania, te które nie są przedłużane świadomie przez abonenta nie ma tego statusu?
-Warto wiedzieć, że w Polsce nie ma obowiązku przedłużania domen a nierozliczona domena może zostać usunięta z rejestru.
-
-
 ### Expire - wygasająca
     "billing period had finished"
 Zakończył się opłacony okres rozliczeniowy; w tym stanie domena przebywa do 30 dni.
@@ -75,7 +78,7 @@ Domena nie istnieje w bazie Registry NASK.
 
 ## Użycie programu
 
-Rozwiązanie najlepiej uruchomić na zewnętrznym urządzeniu jak RPI, które może pracować całą noc pobierając mniej prądu
+Rozwiązanie najlepiej uruchomić na zewnętrznym urządzeniu jak RPI, które może pracować całą noc pobierając mniej energii
 a także resetować router jeśli taka opcja jest możliwa obecnie jest wspierane resetowanie routera marki fritz.
 
 Struktura plików
@@ -157,7 +160,7 @@ Stan liczebny domen w róznych statusach. Liczy osobno domeny zajęte, wolne, za
 ./count.sh
 ```
 
-Sprawdź różnice pomiedzy wczorajszym i dzisiejszym stanem domen
+Sprawdź różnice pomiędzy wczorajszym i dzisiejszym stanem domen
 ```bash
 ./diff.sh
 ```
