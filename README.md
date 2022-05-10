@@ -74,7 +74,7 @@ Zakończył się opłacony okres rozliczeniowy; w tym stanie domena przebywa do 
     "No information available about domain name"
 Domena nie istnieje w bazie Registry NASK.
 
-
++ [STATUSY domen globalnych](STATUSY.md)
 
 ## Użycie programu
 
@@ -198,7 +198,7 @@ Globalna Lista usuniętych domen
 
 ## Check DNS
 
-There are two ways that a domain name => DNS server map can be constructed:
+There are two ways that a domain name =DNS server map can be constructed:
 
 Zone file access: some registries grant access to their zone files to their registrars and other entities.
 This makes it pretty easy to determine which domains in those zones are delegated to a given DNS server.
