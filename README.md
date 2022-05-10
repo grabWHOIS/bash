@@ -1,5 +1,8 @@
 # [bash.grabwhois.com](https://bash.grabwhois.com/)
 
++ [Repozytorium plików git grabWHOIS/bash: bash.grabwhois.com](https://github.com/grabWHOIS/bash)
++ [Projekt grabWHOIS](https://github.com/grabWHOIS)
+
 ## Cel
 
 Przygotwałem ten projekt odpytujący whois ze zmiennym IP
