@@ -1,12 +1,15 @@
 # [bash.grabwhois.com](https://bash.grabwhois.com/)
 
+Projekt napisany w skryptach bash, odpytujący whois ze zmiennym IP z resetowaniem routera DSL przez API
+
 + [Repozytorium plików git grabWHOIS/bash: bash.grabwhois.com](https://github.com/grabWHOIS/bash)
 + [Projekt grabWHOIS](https://github.com/grabWHOIS)
 
+
+
 ## Cel
 
-Przygotwałem ten projekt odpytujący whois ze zmiennym IP
-w celu sprawdzania poziomu cenzury w Polsce
+Przygotwałem ten projekt odpytujący whois ze zmiennym IP w celu sprawdzania poziomu cenzury w Polsce
 + [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
  
 Domeny ze statusem: 
@@ -24,7 +27,6 @@ Poniżej kilka informacji:
 + Jak to działa
 + Do czego służy
 + Jak zainstalować
-
 
  
 
@@ -66,7 +68,7 @@ and won't recover information about domains that get little or no queries.
 
 ## Użycie programu
 
-Rozwiazanie najlepiej uruchomić na zewnętrznym urządzeniu jak RPI, które może pracować całą noc pobierając mniej prądu
+Rozwiązanie najlepiej uruchomić na zewnętrznym urządzeniu jak RPI, które może pracować całą noc pobierając mniej prądu
 a także resetować router jeśli taka opjca jest możliwa obecnie jest wspierane resetowanie routera marki fritz.
 
 
