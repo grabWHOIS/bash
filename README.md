@@ -13,6 +13,13 @@ to już są procenty...
 + [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
 
 To część większej układanki do sprawdzenia skali zjawiska.
+
+Poniżej kilka informacji:
+
++ Jak to działa
++ Do czego służy
++ Jak zainstalować
+
 Program odpytuje WHOIS ze zmiennym IP poprzez router DSL 
 skrypt **restart.sh** resetuje go w momencie uzyskania limitu zapytań dla aktualnego adresu IP
 
@@ -31,15 +38,7 @@ Dodatkowo domeny wygasające, wolne do rejestracji i zablokowane znajdują sie w
     "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
 
 
-### Zapraszam do testowania!
-
-Poniżej kilka informacji:
-
-+ Jak to działa
-+ Do czego służy
-+ Jak zainstalować
-
- 
+Zapraszam do testowania!
 
 ## Użycie programu
 
