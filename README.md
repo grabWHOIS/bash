@@ -10,7 +10,7 @@ Domeny ze statusem:
 
     "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
 
-na dzień dzisiejszy to co najmniej kilkanaście procent domen usuniętych.
+na dzień dzisiejszy to co najmniej kilka procent domen usuniętych.
 
 
 
