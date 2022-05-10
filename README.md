@@ -29,6 +29,7 @@ skrypt **restart.sh** resetuje go w momencie uzyskania limitu zapytań dla aktua
 
 Skrypt **import_deleted_pl.sh** pobiera plik listy domen w trakcie wygasania ze strony
 [https://www.dns.pl/deleted_domains.txt](https://www.dns.pl/deleted_domains.txt)
+Plik z listą domen jest zapisywany folderze **input/** z nazwą zaczynającą się od daty utworzenia
 ```bash
 ./import_deleted_pl.sh
 ```
