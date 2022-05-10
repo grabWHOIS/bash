@@ -17,11 +17,11 @@ DOMAIN_LIST_FOLDER="input"
 DOMAIN_FILE_PATTERN="$DOMAIN_LIST_FOLDER/*.txt"
 #
 WHOIS_EXPIRE_FOLDER="$WHOIS_TODAY_FOLDER/expire"
-WHOIS_EXPIRE="$WHOIS_EXPIRE_FOLDER/$domain.txt"
 #
 WHOIS_FREE_FOLDER="$WHOIS_TODAY_FOLDER/free"
-WHOIS_FREE="$WHOIS_FREE_FOLDER/$domain.txt"
-
+#
+WHOIS_BLOCKED_FOLDER="$WHOIS_TODAY_FOLDER/blocked"
+#
 # START
 echo "GET LATEST deleted domains"
 ./import_deleted_pl.sh
@@ -41,12 +41,15 @@ do
      [ -f $WHOIS_FILE ] && COUNT_LINES=$(cat $WHOIS_FILE | wc -l)
      # IF FILE NOT EXIST OR IS EMPTY
      if [ ! -f $WHOIS_FILE ] || [ ! -s $WHOIS_FILE ] || [ $COUNT_LINES -le 16 ]; then
+        WHOIS_EXPIRE="$WHOIS_EXPIRE_FOLDER/$domain.txt"
+        WHOIS_FREE="$WHOIS_FREE_FOLDER/$domain.txt"
+        WHOIS_BLOCKED="$WHOIS_BLOCKED_FOLDER/$domain.txt"
 
-       if [ ! -f $WHOIS_EXPIRE ] && [ ! -f $WHOIS_FREE ]; then
-        ./whois.sh $domain
-        # > $WHOIS_FILE
-        sleep 1
-      fi
+        if [ ! -f "$WHOIS_EXPIRE" ] && [ ! -f "$WHOIS_FREE" ] && [ ! -f "$WHOIS_BLOCKED" ]; then
+          ./whois.sh $domain
+          # > $WHOIS_FILE
+          #sleep 1
+        fi
      fi
   done
 done

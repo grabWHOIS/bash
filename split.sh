@@ -5,6 +5,8 @@
 
 # EXAMPLE
 # ./split.sh example.com
+
+# CONFIG
 domain=$1
 CURRENTDATE=`date +"%Y-%m-%d"`
 WHOIS_FOLDER="output"

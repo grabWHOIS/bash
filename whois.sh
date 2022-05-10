@@ -52,7 +52,7 @@ if [ ! -f $WHOIS_FILE ] || [ ! -s $WHOIS_FILE ] || [ $COUNT_LINES -le 16 ]; then
       ./move.sh $domain
    fi
 fi
-sleep 1
+#sleep 1
 #cat $WHOIS_FILE
 #cat $WHOIS_EXPIRE
 #ls $WHOIS_FREE_FOLDER

@@ -18,6 +18,6 @@ WHOIS_INPUT_FOLDER="input"
 
 # START
 echo "INPUT:"
-grep "$DOMAIN*" -r "$WHOIS_INPUT_FOLDER/"
+grep "$DOMAIN" -r "$WHOIS_INPUT_FOLDER/"
  #| grep ".$TLD"
 #find $WHOIS_TODAY_FOLDER -name "$DOMAIN*" -type f

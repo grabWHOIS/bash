@@ -22,6 +22,9 @@ WHOIS_EXPIRE="$WHOIS_TODAY_EXPIRE_FOLDER/$domain.txt"
 #
 WHOIS_TODAY_FREE_FOLDER="$WHOIS_TODAY_FOLDER/free"
 WHOIS_FREE="$WHOIS_TODAY_FREE_FOLDER/$domain.txt"
+#
+WHOIS_TODAY_BLOCKED_FOLDER="$WHOIS_TODAY_FOLDER/blocked"
+WHOIS_BLOCKED="$WHOIS_TODAY_BLOCKED_FOLDER/$domain.txt"
 # START
 FINDLIMIT="request limit exceeded"
 FINDEXP="billing period had finished"
@@ -32,6 +35,7 @@ FINDFREEBY="Object does not exist"
 FINDFREEORG="No Data Found"
 FINDFREEOVH="NOT FOUND"
 FINDFREENET="No match for domain"
+FINDBLOCKED="undergoing proceeding"
 
 #echo -e "$WHOIS_FILE\n"
 # grep -q "Status: free" <<< "Domain: 100eur.de Status: free";
@@ -83,12 +87,22 @@ while read -r line; do
     mv $WHOIS_FILE $WHOIS_TODAY_FREE_FOLDER
     break
   fi
+  if grep -q "$FINDBLOCKED" <<< "$line"; then
+      echo "FINDBLOCKED $WHOIS_FILE $WHOIS_BLOCKED"
+      mv $WHOIS_FILE $WHOIS_TODAY_BLOCKED_FOLDER
+    break
+  fi
+
   if grep -q "$FINDLIMIT" <<< "$line"; then
     echo "FINDLIMIT $WHOIS_FILE"
     rm -f $WHOIS_FILE
     ./restart.sh &> /dev/null
-    sleep 30
+    printf '\a'
+    sleep 55
+    printf '\a'
+    sleep 1
+    printf '\a'
     break
   fi
 
-done < $WHOIS_FILE
+done < "$WHOIS_FILE"

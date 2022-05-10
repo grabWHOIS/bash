@@ -4,7 +4,7 @@
 ## Created Date: 03.05.2022
 
 # EXAMPLE
-# ./split.sh "No Data Found"
+# ./find.sh "No Data Found"
 
 # CONFIG
 SOURCE_FILE_PATH=$1
