@@ -54,11 +54,22 @@ Status domeny jest wykrywany poprzez wyszukiwanie charakterystycznej frazy w pli
 ### Blocked - domena zablokowana przez rejestr NASK bez wyroku sądu
 "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
 
-### Free - wolna do rejestracji
-"No information available about domain name"
+Jak podaje NASK ten status oznacza, że "Utrzymywanie domeny zostało wstrzymane do czasu wyjaśnienia wątpliwości dotyczących współpracy z jej abonentem, np. w przypadku zaległości płatniczych u rejestratora, braku aktualizacji danych abonenta (pomimo wezwania), wykorzystywania domeny do celów zagrażających bezpieczeństwu sieci."
+
+Rodzą się naturalne wątpliwości i pytania:
+1. Dlaczego tak istotnie różne sytuacje są **ukryte** pod jednym statusem?
+2. Dlaczego wiele domen w trakcie wygasania, te które nie są przedłużane świadomie przez abonenta nie ma tego statusu?
+Warto wiedzieć, że w Polsce nie ma obowiązku przedłużania domen a nierozliczona domena może zostać usunięta z rejestru.
+
 
 ### Expire - wygasająca
-"billing period had finished"
+    "billing period had finished"
+Zakończył się opłacony okres rozliczeniowy; w tym stanie domena przebywa do 30 dni.
+
+
+### Free - wolna do rejestracji
+    "No information available about domain name"
+Domena nie istnieje w bazie Registry NASK.
 
 
 
