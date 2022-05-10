@@ -6,21 +6,32 @@ Projekt napisany w skryptach bash, odpytujący whois ze zmiennym IP z resetowani
 + [Projekt grabWHOIS](https://github.com/grabWHOIS)
 
 
+Zapraszam do skorzystania z narzędzia grabWHOIS do pobierania danych domeny WHOIS i weryfikacji samemu ile tak na prawdę domen jest cenzurowanych:
+"Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
+to już są procenty...
 
-## Cel
-
-Przygotwałem ten projekt odpytujący whois ze zmiennym IP w celu sprawdzania poziomu cenzury w Polsce
 + [„Dlaczego nie działa mi strona”, czyli jak ABW walczy z kremlowską propagandą](https://zaufanatrzeciastrona.pl/post/dlaczego-nie-dziala-mi-strona-czyli-jak-abw-walczy-z-kremlowska-propaganda/)
- 
-Domeny ze statusem: 
+
+To część większej układanki do sprawdzenia skali zjawiska.
+Program odpytuje WHOIS ze zmiennym IP poprzez router DSL 
+skrypt **restart.sh** resetuje go w momencie uzyskania limitu zapytań dla aktualnego adresu IP
+
+```bash
+./restart.sh
+```
+
+Skrypt **import_deleted_pl.sh** pobiera plik listy domen w trakcie wygasania ze strony
+[https://www.dns.pl/deleted_domains.txt](https://www.dns.pl/deleted_domains.txt)
+```bash
+./import_deleted_pl.sh
+```
+Pobrane dane WHOIS domeny są zapisywane do pliku tekstowego
+Dodatkowo domeny wygasające, wolne do rejestracji i zablokowane znajdują sie w osobnych folderach dla danej daty 
 
     "Trwa postępowanie wyjaśniające [REGISTERED, ze statusem clientHold/serverHold]"
 
-na dzień dzisiejszy to co najmniej kilka procent domen usuniętych.
 
-
-
-Zapraszam do testowania!
+### Zapraszam do testowania!
 
 Poniżej kilka informacji:
 
@@ -30,48 +41,12 @@ Poniżej kilka informacji:
 
  
 
-## Oficjalna lista stron www / domen znajduje się tutaj:
-
-+ [Rejestr Domen Ocenzurowanych](https://hazard.mf.gov.pl/)
-+ [Lista Domen ocenzurowanych](https://hole.cert.pl/domains/domains.txt)
-
-
-## DNS TOOLS
-
-Jak sprawdzić status domeny i dane abonenta?
-+ [DNS - Krajowy Rejestr Domen](https://www.dns.pl/whois)
-
-Globalna Lista usuniętych domen 
-+ [Deleted Domains (last 7 days) » ExpiredDomains.net](https://member.expireddomains.net/domains/combinedexpired/?o=statustld_registered&r=d&ftlds[]=196&flimit=200&fwordpl=1#listing)
-
-+ [ WHOIS, DNS, & Domain Info - DomainTools](https://whois.domaintools.com/example.pl)
-
-+ [ Reverse NS Lookup - DomainTools](https://reversens.domaintools.com/search/?q=)
-
-
-## Check DNS
-
-There are two ways that a domain name => DNS server map can be constructed:
-
-Zone file access: some registries grant access to their zone files to their registrars and other entities. 
-This makes it pretty easy to determine which domains in those zones are delegated to a given DNS server. 
-This is how DomainTools.com provides their Name Server Spy product. 
-This is the most reliable method, but is obviously limited to the zone files that they have access to.
-
-
-Passive DNS. This involves examining traffic through recursive DNS servers at ISPs 
-and reconstructing zone data based on what's seen. 
-This method lets you discover information from the entire DNS space, 
-but is less reliable as changes take longer to appear in your database,
-and won't recover information about domains that get little or no queries.
-
-
 ## Użycie programu
 
 Rozwiązanie najlepiej uruchomić na zewnętrznym urządzeniu jak RPI, które może pracować całą noc pobierając mniej prądu
 a także resetować router jeśli taka opjca jest możliwa obecnie jest wspierane resetowanie routera marki fritz.
 
-
+Struktura plików
     
 ```bash    
 |__LICENSE
@@ -152,6 +127,42 @@ whois domains .com .org .net
 ```bash
 ./whois_free.sh freedoman
 ```
+
+
+## Oficjalna lista stron www / domen znajduje się tutaj:
+
++ [Rejestr Domen Ocenzurowanych](https://hazard.mf.gov.pl/)
++ [Lista Domen ocenzurowanych](https://hole.cert.pl/domains/domains.txt)
+
+
+## DNS TOOLS
+
+Jak sprawdzić status domeny i dane abonenta?
++ [DNS - Krajowy Rejestr Domen](https://www.dns.pl/whois)
+
+Globalna Lista usuniętych domen
++ [Deleted Domains (last 7 days) » ExpiredDomains.net](https://member.expireddomains.net/domains/combinedexpired/?o=statustld_registered&r=d&ftlds[]=196&flimit=200&fwordpl=1#listing)
+
++ [ WHOIS, DNS, & Domain Info - DomainTools](https://whois.domaintools.com/example.pl)
+
++ [ Reverse NS Lookup - DomainTools](https://reversens.domaintools.com/search/?q=)
+
+
+## Check DNS
+
+There are two ways that a domain name => DNS server map can be constructed:
+
+Zone file access: some registries grant access to their zone files to their registrars and other entities.
+This makes it pretty easy to determine which domains in those zones are delegated to a given DNS server.
+This is how DomainTools.com provides their Name Server Spy product.
+This is the most reliable method, but is obviously limited to the zone files that they have access to.
+
+
+Passive DNS. This involves examining traffic through recursive DNS servers at ISPs
+and reconstructing zone data based on what's seen.
+This method lets you discover information from the entire DNS space,
+but is less reliable as changes take longer to appear in your database,
+and won't recover information about domains that get little or no queries.
 
 
 
