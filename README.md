@@ -142,20 +142,24 @@ cd grabWHOIS
 
 ## check WHOIS
 
+Sprawdź domeny z plików tekstowych znajdujących się w folderze **input/** 
 ```bash
 ./whois_all.sh 
 ```
 
+Sprawdź listę domeny bezpośrednio z pliku tekstowego
 ```bash
 ./whois_from_file.sh strato.de
 ```
 
+Stan liczebny domen w róznych statusach. Liczy osobno domeny zajęte, wolne, zablokowane.
 ```bash
-./whois_from_file.sh premium.pl
+./count.sh
 ```
 
+Sprawdź różnice pomiedzy wczorajszym i dzisiejszym stanem domen
 ```bash
-./whois_from_file.sh aftermarket.pl
+./diff.sh
 ```
 
 

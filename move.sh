@@ -98,9 +98,9 @@ while read -r line; do
     rm -f $WHOIS_FILE
     ./restart.sh &> /dev/null
     printf '\a'
-    sleep 55
+    sleep 60
     printf '\a'
-    sleep 1
+    sleep 0.3
     printf '\a'
     break
   fi
