@@ -22,6 +22,8 @@ WHOIS_FREE_FOLDER="$WHOIS_TODAY_FOLDER/free"
 #
 WHOIS_BLOCKED_FOLDER="$WHOIS_TODAY_FOLDER/blocked"
 #
+WHOIS_ERROR_FOLDER="$WHOIS_TODAY_FOLDER/error"
+#
 # START
 echo "GET LATEST deleted domains"
 ./import_deleted_pl.sh
@@ -45,8 +47,9 @@ do
         WHOIS_EXPIRE="$WHOIS_EXPIRE_FOLDER/$domain.txt"
         WHOIS_FREE="$WHOIS_FREE_FOLDER/$domain.txt"
         WHOIS_BLOCKED="$WHOIS_BLOCKED_FOLDER/$domain.txt"
+        WHOIS_ERROR="$WHOIS_ERROR_FOLDER/$domain.txt"
 
-        if [ ! -f "$WHOIS_EXPIRE" ] && [ ! -f "$WHOIS_FREE" ] && [ ! -f "$WHOIS_BLOCKED" ]; then
+        if [ ! -f "$WHOIS_EXPIRE" ] && [ ! -f "$WHOIS_FREE" ] && [ ! -f "$WHOIS_BLOCKED" ] && [ ! -f "$WHOIS_ERROR" ]; then
           ./whois.sh $domain
           # > $WHOIS_FILE
           #sleep 1

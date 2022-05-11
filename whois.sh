@@ -22,30 +22,38 @@ WHOIS_EXPIRE="$WHOIS_EXPIRE_FOLDER/$domain.txt"
 WHOIS_FREE_FOLDER="$WHOIS_TODAY_FOLDER/free"
 WHOIS_FREE="$WHOIS_FREE_FOLDER/$domain.txt"
 
+#
+WHOIS_BLOCKED_FOLDER="$WHOIS_TODAY_FOLDER/blocked"
+WHOIS_BLOCKED="$WHOIS_BLOCKED_FOLDER/$domain.txt"
+
+#
+WHOIS_ERROR_FOLDER="$WHOIS_TODAY_FOLDER/error"
+WHOIS_ERROR="$WHOIS_ERROR_FOLDER/$domain.txt"
+
 # START
 
 [ -f $WHOIS_EXPIRE ] && exit
 [ -f $WHOIS_FREE ] && exit
+[ -f $WHOIS_BLOCKED ] && exit
+[ -f $WHOIS_ERROR ] && exit
 
 COUNT_LINES=0;
 # IF FILE EXIST, COUNT THE LINES
 [ -f $WHOIS_FILE ] && COUNT_LINES=$(cat $WHOIS_FILE | wc -l)
 # IF FILE NOT EXIST OR IS EMPTY
 if [ ! -f $WHOIS_FILE ] || [ ! -s $WHOIS_FILE ] || [ $COUNT_LINES -le 16 ]; then
-  #echo $domain
   WHOISINFO=$(whois $domain)
   echo $WHOISINFO
   COUNT_LINES=$(echo "$WHOISINFO" | wc -l)
   echo $COUNT_LINES
-  ## SPLIT  ""
+
+  ## MOVE
   if [ $COUNT_LINES -ge 16 ]; then
     echo "$WHOISINFO" > $WHOIS_FILE
     if [ $COUNT_LINES -ge 30 ]; then
       ./split.sh $domain
     fi
-   #&> /dev/null
     ./move.sh $domain
-   #&> /dev/null
    else
      # ANOTHER SMALLER WHOIS, SUCH FREE DOMAINS
       echo "$WHOISINFO" > $WHOIS_FILE
