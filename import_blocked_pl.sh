@@ -4,14 +4,14 @@
 ## Created Date: 03.05.2022
 
 # EXAMPLE
-# ./import_deleted_pl.sh
+# ./import_blocked_pl.sh
 
 # CONFIG
 INPUT_FOLDER="input"
 CACHE_FOLDER="cache"
-URL="https://www.dns.pl/deleted_domains.txt"
+URL="https://hole.cert.pl/domains/domains.txt"
 CURRENTDATE=`date +"%Y-%m-%d"`
-FILE_NAME="deleted.txt"
+FILE_NAME="blocked.txt"
 CACHE_FILE="${CACHE_FOLDER}/${CURRENTDATE}_${FILE_NAME}"
 INPUT_FILE="${INPUT_FOLDER}/${CURRENTDATE}_${FILE_NAME}"
 [ -f "$INPUT_FILE" ] && exit

@@ -1,3 +1,4 @@
+server/
 find_output_dns.txt
 cache/*
 data.dat

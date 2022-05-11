@@ -7,7 +7,7 @@
 # ./whois_all.sh
 
 # CONFIG
-YESTERDAY=$(date -d "yesterday" '+%Y-%m-%d')
+
 CURRENTDATE=`date +"%Y-%m-%d"`
 WHOIS_FOLDER="output"
 WHOIS_TODAY_FOLDER="$WHOIS_FOLDER/$CURRENTDATE"
@@ -25,6 +25,7 @@ WHOIS_BLOCKED_FOLDER="$WHOIS_TODAY_FOLDER/blocked"
 # START
 echo "GET LATEST deleted domains"
 ./import_deleted_pl.sh
+./import_blocked_pl.sh
 echo "Show all domain list in QUEUE"
 DOMAIN_FILE_LIST=$(ls $DOMAIN_FILE_PATTERN)
 echo "$DOMAIN_FILE_LIST"
