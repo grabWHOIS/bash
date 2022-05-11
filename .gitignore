@@ -1,6 +1,6 @@
 server/
 find_output_dns.txt
-cache/*
+../../whoisarch/bash/cache/*
 data.dat
 domeny.txt
 input
