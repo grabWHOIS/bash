@@ -1,4 +1,4 @@
-../www/DOCS/MENU.md
+./DOCS/MENU.md
 ../www/DOCS/ABOUT.md
 ../www/DOCS/INSTALL.md
 ../www/DOCS/START.md
