@@ -13,7 +13,7 @@
 ## ABOUT grabWHOIS [<span style='font-size:20px;'>&#x270D;</span>](https://github.com/grabWHOIS/www/edit/main/DOCS/ABOUT.md)
 
 
-Projekt odpytujący whois ze zmiennym IP z resetowaniem routera DSL przez API
+Skrypty bash'a odpytujące whois ze zmiennym IP z resetowaniem routera DSL przez API
 
 + [Repozytorium plików git grabWHOIS/bash: bash.grabwhois.com](https://github.com/grabWHOIS/bash)
 + [Projekt grabWHOIS](https://github.com/grabWHOIS)
