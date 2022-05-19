@@ -30,9 +30,18 @@ WHOIS_TODAY_ERROR_FOLDER="$WHOIS_TODAY_FOLDER/error"
 WHOIS_ERROR="$WHOIS_TODAY_ERROR_FOLDER/$domain.txt"
 
 # START
+## LIMIT
 FINDLIMIT="request limit exceeded"
-## billing period had finished
+## EXPIRING
 FINDEXP="billing period had finished"
+## ERROR
+FINDERROR="Malformed request."
+FINDERRORTLD="This TLD has no whois server"
+FINDERRORINVALID="Status.: INVALID"
+## BLOCKED
+FINDBLOCKED="undergoing proceeding"
+FINDNOTFORREG="This name is not available for registration"
+## FREE
 FINDPL="No information available"
 FIND="Domain not found"
 FINDFREE="Status: free"
@@ -40,13 +49,8 @@ FINDFREEBY="Object does not exist"
 FINDFREEORG="No Data Found"
 FINDFREEOVH="NOT FOUND"
 FINDFREENET="No match for "
-#RU> No entries found for the selected source
 FINDFREERU="No entries found"
 FINDFREETOP="The queried object does not exist"
-FINDERROR="Malformed request."
-FINDERRORTLD="This TLD has no whois server"
-FINDERRORINVALID="Status.: INVALID"
-FINDBLOCKED="undergoing proceeding"
 
 #echo -e "$WHOIS_FILE\n"
 # grep -q "Status: free" <<< "Domain: 100eur.de Status: free";
@@ -95,6 +99,11 @@ while read -r line; do
   ## BLOCKED
   if grep -q "$FINDBLOCKED" <<<"$line"; then
     echo "FINDBLOCKED $WHOIS_FILE $WHOIS_BLOCKED"
+    mv $WHOIS_FILE $WHOIS_TODAY_BLOCKED_FOLDER
+    break
+  fi
+  if grep -q "$FINDNOTFORREG" <<<"$line"; then
+    echo "FINDNOTFORREG $WHOIS_FILE $WHOIS_BLOCKED"
     mv $WHOIS_FILE $WHOIS_TODAY_BLOCKED_FOLDER
     break
   fi
@@ -149,7 +158,5 @@ while read -r line; do
     mv $WHOIS_FILE $WHOIS_TODAY_FREE_FOLDER
     break
   fi
-
-
 
 done <"$WHOIS_FILE"
